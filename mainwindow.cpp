@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    setWindowTitle("学生管理系统V1.0");
+
 }
 
 MainWindow::~MainWindow()
