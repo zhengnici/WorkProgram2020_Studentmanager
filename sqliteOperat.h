@@ -1,0 +1,4 @@
+#ifndef SQLITEOPERAT_H
+#define SQLITEOPERAT_H
+
+#endif // SQLITEOPERAT_H
