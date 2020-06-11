@@ -4,8 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
+QT       += core gui sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Pro1
@@ -24,17 +23,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+        connection.cpp \
+        inqurewindow.cpp \
         main.cpp \
         mainwindow.cpp \
         student.cpp \
         studentqt.cpp
 
 HEADERS += \
+        connection.h \
+        inqurewindow.h \
         mainwindow.h \
+        sqliteOperat.h \
         student.h \
         studentqt.h
 
 FORMS += \
+        inqurewindow.ui \
         mainwindow.ui
 
 RESOURCES += \

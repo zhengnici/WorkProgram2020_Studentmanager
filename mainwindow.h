@@ -5,6 +5,8 @@
 #include "studentqt.h"
 #include <string>
 #include <QStringListModel>
+#include "inqurewindow.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,12 +24,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_7_clicked();
 
-    void on_pushButton_7_clicked(bool checked);
+    void on_pushButton_6_clicked(bool checked);
+
+    void on_pushButton_3_clicked(bool checked);
 
 private:
     Ui::MainWindow *ui;
+    inqureWindow w1;
+
 };
 
 #endif // MAINWINDOW_H

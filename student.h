@@ -29,7 +29,7 @@ public:
     list_student(void)
     {
         student *ph = new student();
-        head.push_back(*ph);
+        head.push_back(*ph);//添加头节点
 
     }
 public:

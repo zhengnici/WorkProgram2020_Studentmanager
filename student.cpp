@@ -2,13 +2,13 @@
 
 student::student(void)
 {
-    this->StudentID = "暂无";
-    this->Name = "暂无";
+    this->StudentID = "学号";
+    this->Name = "姓名";
 
-    this->NativePlace[0] = "国家暂无";
-    this->NativePlace[1] = "省份暂无";
-    this->NativePlace[2] = "市暂无";
-    this->NativePlace[3] = "具体地址暂无";
+    this->NativePlace[0] = "国家";
+    this->NativePlace[1] = "省份";
+    this->NativePlace[2] = "市";
+    this->NativePlace[3] = "具体地址";
 }
 
 int student::SetAll(string id, string name, string locat)
