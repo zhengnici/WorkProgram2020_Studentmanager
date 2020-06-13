@@ -5,8 +5,12 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QApplication>
+#include <QMessageBox>
+#include <string>
+using namespace  std;
 //SQlite操作函数
-
+//对数据库的总体操作，应用操作在“studentqt”类里面
 
 void mysqlittest(void)
 {
@@ -106,6 +110,26 @@ void mysqlittest(void)
        database.close();
 }
 
+//创建SQlite数据库
+//参数:路径
+//返回值：创建成功与否
+bool MakeDataBase(QString base_naem)
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(QApplication::applicationDirPath()+"/"+base_naem+".db");    //如果本目录下没有该文件,则会在本目录下生成,否则连接该文件
+     if (!db.open()) {
+            QMessageBox::warning(0, QObject::tr("Database Error"),
+                                 db.lastError().text());
+            return false;
+     }
+     return true;
+}
 
+bool DeleteTable(QString base_name)
+{
+    QSqlQuery query;
+    query.exec("DROP TABLE "+base_name);    //删除名为students的表
+    return(true);
+}
 
 #endif // SQLITEOPERAT_H

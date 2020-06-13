@@ -23,6 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+        addstudentwindw.cpp \
         connection.cpp \
         inqurewindow.cpp \
         main.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
         studentqt.cpp
 
 HEADERS += \
+        addstudentwindw.h \
         connection.h \
         inqurewindow.h \
         mainwindow.h \
@@ -39,6 +41,7 @@ HEADERS += \
         studentqt.h
 
 FORMS += \
+        addstudentwindw.ui \
         inqurewindow.ui \
         mainwindow.ui
 

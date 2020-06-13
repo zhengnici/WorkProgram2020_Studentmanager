@@ -1,27 +1,23 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "addstudentwindw.h"
+#include "ui_addstudentwindw.h"
 #include <qdebug.h>
 
-using namespace std;
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+AddStudentWindw::AddStudentWindw(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::AddStudentWindw)
 {
     ui->setupUi(this);
     Opera_studens1.Init_SQlite();//初始化数据库
     setWindowTitle("学生管理系统V1.0");
-
 }
 
-MainWindow::~MainWindow()
+AddStudentWindw::~AddStudentWindw()
 {
     delete ui;
 }
 
 
-
-
-void MainWindow::on_pushButton_6_clicked(bool checked)
+void AddStudentWindw::on_pushButton_6_clicked(bool checked)
 {
     if(checked)
         ;
@@ -43,10 +39,10 @@ void MainWindow::on_pushButton_6_clicked(bool checked)
     qDebug()<<(QString::fromStdString(stu_test.NativePlace[1]));
     qDebug()<<(QString::fromStdString(stu_test.NativePlace[2]));
     qDebug()<<(QString::fromStdString(stu_test.NativePlace[3]));
-
 }
 
-void MainWindow::on_pushButton_3_clicked(bool checked)
+
+void AddStudentWindw::on_pushButton_3_clicked(bool checked)
 {
     if(checked)
         ;

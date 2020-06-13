@@ -24,7 +24,7 @@ public:
 class list_student
 {
 public:
-    list<student> head; //头节点
+    list<student> head; //相当于头节点
 public:
     list_student(void)
     {
