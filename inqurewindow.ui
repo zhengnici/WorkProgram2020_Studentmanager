@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>120</y>
-     <width>501</width>
-     <height>371</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -166,6 +156,16 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>120</y>
+     <width>551</width>
+     <height>401</height>
+    </rect>
+   </property>
   </widget>
  </widget>
  <resources/>

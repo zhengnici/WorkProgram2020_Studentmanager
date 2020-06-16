@@ -122,6 +122,7 @@ bool MakeDataBase(QString base_naem)
                                  db.lastError().text());
             return false;
      }
+     db.close();
      return true;
 }
 
