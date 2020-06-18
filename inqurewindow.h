@@ -8,7 +8,7 @@
 #include <QObject>
 #include <QSqlTableModel>
 #include <QStandardItemModel>
-
+#include <QMessageBox>
 
 namespace Ui {
 class inqureWindow;
@@ -26,6 +26,12 @@ public:
 
 private slots:
     void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::inqureWindow *ui;

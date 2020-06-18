@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #define DEBUG_Stdu
+#define CNW 3  //中文字长，GB：2，UTF8：3
 using namespace std;
 
 class student
