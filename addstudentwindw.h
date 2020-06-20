@@ -7,6 +7,8 @@
 #include <string>
 #include <QStringListModel>
 #include <QDialog>
+#include <QMessageBox>
+
 
 namespace Ui {
 class AddStudentWindw;

@@ -26,6 +26,7 @@ SOURCES += \
         addstudentwindw.cpp \
         connection.cpp \
         inqurewindow.cpp \
+        loginaccount.cpp \
         main.cpp \
         mainwindow.cpp \
         student.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
         addstudentwindw.h \
         connection.h \
         inqurewindow.h \
+        loginaccount.h \
         mainwindow.h \
         sqliteOperat.h \
         student.h \

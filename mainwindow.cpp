@@ -8,12 +8,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Opera_studens1.Init_SQlite();//初始化数据库
     setWindowTitle("学生管理系统V1.0");
-
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    if(UserAccount.IsAdministrator(ui->lineEdit->text(),ui->lineEdit_2->text()))
+    {
+        this->w.show();
+        this->hide();
+    }
+    else
+    {
+        QMessageBox::warning(this,tr("错误"),tr("当前密码或账号错误"),
+                                           QMessageBox::Yes);
+    }
 }

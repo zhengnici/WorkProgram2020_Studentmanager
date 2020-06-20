@@ -156,3 +156,8 @@ void inqureWindow::on_pushButton_6_clicked()
     }
 }
 }
+
+void inqureWindow::on_pushButton_8_clicked()
+{
+
+}
