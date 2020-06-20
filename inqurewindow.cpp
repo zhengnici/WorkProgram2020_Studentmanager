@@ -95,6 +95,7 @@ void inqureWindow::on_pushButton_6_clicked()
     {//无约束条件
         if(ui->lineEdit->text().isEmpty())
         {
+            sqlmodel->setTable("students");//选择数据库的表
             sqlmodel->setEditStrategy(QSqlTableModel::OnManualSubmit);
             sqlmodel->select();//相当于刷新整个表
         }
@@ -154,5 +155,4 @@ void inqureWindow::on_pushButton_6_clicked()
         } break;
     }
 }
-
 }

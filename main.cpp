@@ -7,6 +7,8 @@ void myinit(void);
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    MainWindow mw;
+    mw.show();
     AddStudentWindw w;
     w.show();
 
