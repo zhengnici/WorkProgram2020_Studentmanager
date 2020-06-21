@@ -22,6 +22,7 @@ void MainWindow::on_pushButton_clicked()
     {
         this->w.show();
         this->hide();
+        this->w.setuser_login(ui->lineEdit->text(),0);
     }
     else
     {

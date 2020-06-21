@@ -2,13 +2,22 @@
 #include "ui_addstudentwindw.h"
 #include <qdebug.h>
 
+void AddStudentWindw::setuser_login(QString name_in, int power_in)
+{
+    w2.loginuser.name=name_in.toStdString();
+    w2.loginuser.power=power_in;
+}
+
 AddStudentWindw::AddStudentWindw(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddStudentWindw)
 {
     ui->setupUi(this);
     Opera_studens1.Init_SQlite();//初始化数据库
-    QObject::connect(&w1,SIGNAL(mySignal()),this,SLOT(toAddWindowSlot()));//连接w1的切换信号，实现添加窗口的显示
+    QObject::connect(&w1,SIGNAL(InqureToAdd()),this,SLOT(toAddWindowSlot()));//连接w1的切换信号，数据添加窗口的显示
+    QObject::connect(&w1,SIGNAL(InqureToUser()),this,SLOT(toUerInformWindowSlot()));//用户信息窗口显示
+    QObject::connect(&w2,SIGNAL(UserToInqure()),this,SLOT(toInqureWindowSlot()));//显示数据查询界面
+    QObject::connect(&w2,SIGNAL(UserToAdd()),this,SLOT(toAddWindowSlot()));//显示数据添加界面
     setWindowTitle("学生管理系统V1.0");
 }
 
@@ -16,7 +25,6 @@ AddStudentWindw::~AddStudentWindw()
 {
     delete ui;
 }
-
 
 void AddStudentWindw::on_pushButton_6_clicked()
 {
@@ -42,17 +50,36 @@ void AddStudentWindw::on_pushButton_6_clicked()
     qDebug()<<(QString::fromStdString(stu_test.NativePlace[3]));
 }
 
+//显示数据查询界面的函数
 void AddStudentWindw::on_pushButton_3_clicked()
 {
-
-    w1.show();
-    this->hide();
+   toInqureWindowSlot();
 }
 
+void AddStudentWindw::on_pushButton_2_clicked()
+{
+    toUerInformWindowSlot();
+}
 void AddStudentWindw::toAddWindowSlot()
 {
     this->show();
     w1.hide();
-
+    w2.hide();
 }
+
+void AddStudentWindw::toUerInformWindowSlot()
+{
+   w2.show();
+   this->hide();
+   w1.hide();
+}
+
+void AddStudentWindw::toInqureWindowSlot()
+{
+    w1.show();
+    this->hide();
+    w2.hide();
+}
+
+
 

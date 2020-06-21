@@ -32,7 +32,6 @@ bool LoginAccount::InitAccountDataBase()
                 sql_query.exec("INSERT INTO admin (name, pass) "
                                "VALUES ('admin','admin')");
         }
-
         return(true);
     }
 }

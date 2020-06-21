@@ -30,7 +30,9 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         student.cpp \
-        studentqt.cpp
+        studentqt.cpp \
+        uerinformwindow.cpp \
+        user.cpp
 
 HEADERS += \
         addstudentwindw.h \
@@ -40,12 +42,15 @@ HEADERS += \
         mainwindow.h \
         sqliteOperat.h \
         student.h \
-        studentqt.h
+        studentqt.h \
+        uerinformwindow.h \
+        user.h
 
 FORMS += \
         addstudentwindw.ui \
         inqurewindow.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        uerinformwindow.ui
 
 RESOURCES += \
     Resource.qrc

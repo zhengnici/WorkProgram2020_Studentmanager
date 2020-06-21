@@ -18,9 +18,13 @@ inqureWindow::~inqureWindow()
 
 void inqureWindow::on_pushButton_4_clicked()
 {
-    emit mySignal();//发出切换信号到添加窗口的槽中
+    emit InqureToAdd();//切换到信息添加界面
 }
 
+void inqureWindow::on_pushButton_2_clicked()
+{
+    emit InqureToUser();//切换到用户信息界面
+}
 
 //初始化tableview的标题
 void inqureWindow::InitiaTableView()
@@ -161,3 +165,5 @@ void inqureWindow::on_pushButton_8_clicked()
 {
 
 }
+
+

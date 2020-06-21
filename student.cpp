@@ -18,13 +18,10 @@ int student::SetAll(string id, string name, string locat)
     this->Name = name;
     int i1 = locat.find_first_of("国")+CNW, i2 = locat.find("省")+CNW, i3 = locat.find("市")+CNW;
     palce[0] = locat.substr(0, 2);
-    this->NativePlace[0] = locat.substr(0, i1);//+locat[i1];
-    this->NativePlace[1] = locat.substr(i1, i2-i1);//+locat[i2];
-//    this->NativePlace[1].erase(0);
-    this->NativePlace[2] = locat.substr(i2, i3-i2);//+locat[i3];
-//    this->NativePlace[2].erase(0);
+    this->NativePlace[0] = locat.substr(0, i1);
+    this->NativePlace[1] = locat.substr(i1, i2-i1);
+    this->NativePlace[2] = locat.substr(i2, i3-i2);
     this->NativePlace[3] = locat.substr(i3);
-//    this->NativePlace[3].erase(0);
     return(1);
 }
 

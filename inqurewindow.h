@@ -35,13 +35,16 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::inqureWindow *ui;
     void InitiaTableView(void);
     studentQT Opera_studens2;//学生成员变量
     QSqlTableModel *sqlmodel;
 signals:
-    void mySignal();//自定义信号，与界面切换有关
+    void InqureToAdd();//切换到信息添加界面
+    void InqureToUser();//切换到用户信息界面
 };
 
 #endif // INQUREWINDOW_H
