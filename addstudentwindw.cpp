@@ -18,6 +18,7 @@ AddStudentWindw::AddStudentWindw(QWidget *parent) :
     QObject::connect(&w1,SIGNAL(InqureToUser()),this,SLOT(toUerInformWindowSlot()));//用户信息窗口显示
     QObject::connect(&w2,SIGNAL(UserToInqure()),this,SLOT(toInqureWindowSlot()));//显示数据查询界面
     QObject::connect(&w2,SIGNAL(UserToAdd()),this,SLOT(toAddWindowSlot()));//显示数据添加界面
+    QObject::connect(&w3,SIGNAL(ObjPath(QString)),this,SLOT(Import(QString)));
     setWindowTitle("学生管理系统V1.0");
 }
 
@@ -81,5 +82,15 @@ void AddStudentWindw::toInqureWindowSlot()
     w2.hide();
 }
 
+void AddStudentWindw::Import(QString path_in)
+{
+    qDebug()<<path_in;
+}
 
 
+
+
+void AddStudentWindw::on_pushButton_5_clicked()
+{
+    w3.show();
+}

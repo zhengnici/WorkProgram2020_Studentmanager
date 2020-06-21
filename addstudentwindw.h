@@ -4,6 +4,7 @@
 #include "studentqt.h"
 #include "inqurewindow.h"
 #include "uerinformwindow.h"
+#include "filebrowser.h"
 #include <QMainWindow>
 #include <string>
 #include <QStringListModel>
@@ -33,13 +34,17 @@ private slots:
     void toAddWindowSlot();//显示数据添加窗口的槽函数
     void toUerInformWindowSlot();//显示用户信息窗口槽函数
     void toInqureWindowSlot();//显示数据查询窗口槽函数
+    void Import(QString);
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::AddStudentWindw *ui;
     inqureWindow w1;//自定的数据查询窗口
     UerInformWindow w2;//个人信息显示窗口
+    FileBrowser w3;//文件浏览窗口
     studentQT Opera_studens1;//学生成员变量
 };
 

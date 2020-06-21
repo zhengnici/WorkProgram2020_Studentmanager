@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         addstudentwindw.cpp \
         connection.cpp \
+        filebrowser.cpp \
         inqurewindow.cpp \
         loginaccount.cpp \
         main.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
 HEADERS += \
         addstudentwindw.h \
         connection.h \
+        filebrowser.h \
         inqurewindow.h \
         loginaccount.h \
         mainwindow.h \
@@ -48,6 +50,7 @@ HEADERS += \
 
 FORMS += \
         addstudentwindw.ui \
+        filebrowser.ui \
         inqurewindow.ui \
         mainwindow.ui \
         uerinformwindow.ui
