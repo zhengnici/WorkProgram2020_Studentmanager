@@ -5,6 +5,7 @@
 #include "inqurewindow.h"
 #include "uerinformwindow.h"
 #include "filebrowser.h"
+#include "maplocation.h"
 #include <QMainWindow>
 #include <string>
 #include <QStringListModel>
@@ -40,12 +41,17 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_comboBox_2_currentTextChanged(const QString &arg1);
+
 private:
     Ui::AddStudentWindw *ui;
     inqureWindow w1;//自定的数据查询窗口
     UerInformWindow w2;//个人信息显示窗口
     FileBrowser w3;//文件浏览窗口
-    studentQT Opera_studens1;//学生成员变量
+    studentQT Opera_studens1;//学生成员变量0
+    MapLocation maploca;//国家-省，省-市字典
 };
 
 

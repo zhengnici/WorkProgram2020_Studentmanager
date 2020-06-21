@@ -30,6 +30,7 @@ SOURCES += \
         loginaccount.cpp \
         main.cpp \
         mainwindow.cpp \
+        maplocation.cpp \
         student.cpp \
         studentqt.cpp \
         uerinformwindow.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
         inqurewindow.h \
         loginaccount.h \
         mainwindow.h \
+        maplocation.h \
         sqliteOperat.h \
         student.h \
         studentqt.h \

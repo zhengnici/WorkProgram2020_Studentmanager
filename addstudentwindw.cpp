@@ -94,3 +94,15 @@ void AddStudentWindw::on_pushButton_5_clicked()
 {
     w3.show();
 }
+
+void AddStudentWindw::on_comboBox_currentTextChanged(const QString &arg1)
+{
+    ui->comboBox_2->clear();
+    ui->comboBox_2->addItems(maploca.province.value(arg1));
+}
+
+void AddStudentWindw::on_comboBox_2_currentTextChanged(const QString &arg1)
+{
+    ui->comboBox_3->clear();
+    ui->comboBox_3->addItems(maploca.city.value(arg1));
+}
