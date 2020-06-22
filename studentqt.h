@@ -18,6 +18,7 @@ public:
     studentQT();
     bool Init_SQlite(void);//学生待存取的数据库的初始化，使用sqlite数据库
     bool InserAsID_SQlite(student stude);//按照学号插入学生
+    bool ImportFromCSV_SQlite(QString importLine);//从CSV格式的数据中导入一个数级到是数据库
     int SerchAsID_SQlite(QString id);//按照ID找到该学生，可能有多人，返回在类的成员里面,返回值数量
     int SerchAsProvi_SQlite(QString Prov);//按照省份查找学生可能有多人，返回在类的成员里面,返回值数量
 };

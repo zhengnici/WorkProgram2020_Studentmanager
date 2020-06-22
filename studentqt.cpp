@@ -72,3 +72,16 @@ bool studentQT::InserAsID_SQlite(student stude)
 
 }
 
+bool studentQT::ImportFromCSV_SQlite(QString importLine)
+{
+    QStringList list = importLine.split(",");
+    student impo_stu;
+    list[1]=list[1]+list[2];
+    list[1]=list[1]+list[3];
+    list[1]=list[1]+list[4];
+    list[1]=list[1]+list[5];
+
+    impo_stu.SetAll(list[0].toStdString(),list[6].toStdString(),list[1].toStdString());
+    InserAsID_SQlite(impo_stu);
+}
+

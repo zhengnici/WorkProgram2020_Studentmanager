@@ -27,6 +27,7 @@ FileBrowser::~FileBrowser()
     delete ui;
 }
 
+//传递CSV文件的地址
 void FileBrowser::on_pushButton_2_clicked()
 {
     if(filepath.indexOf(".csv")>=0)
@@ -40,12 +41,14 @@ void FileBrowser::on_pushButton_2_clicked()
     }
 }
 
+//获取路径
 void FileBrowser::on_treeView_clicked(const QModelIndex &index)
 {
     filepath.clear();
     filepath=model->filePath(index);
 }
 
+//关闭该界面
 void FileBrowser::on_pushButton_clicked()
 {
     this->hide();

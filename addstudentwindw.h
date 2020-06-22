@@ -11,6 +11,7 @@
 #include <QStringListModel>
 #include <QDialog>
 #include <QMessageBox>
+#include <QFile>
 
 
 namespace Ui {
@@ -22,7 +23,8 @@ class AddStudentWindw : public QDialog
     Q_OBJECT
 public:     //user class and function
     void setuser_login(QString name_in,int power_in);
-
+private:
+    void ImportFormCSV(QString path_in);
 public:
     explicit AddStudentWindw(QWidget *parent = nullptr);
     ~AddStudentWindw();
