@@ -32,6 +32,12 @@ void AddStudentWindw::setuser_login(QString name_in, int power_in)
 //数据批量导入
 void AddStudentWindw::ImportFormCSV(QString path_in)
 {
+    if(path_in.indexOf(".csv")<0)
+    {
+        QMessageBox::information(NULL, "错误", "未选择正确文件只支持CSV格式文件");
+        return ;
+    }
+
     QFile csvFile(path_in);
     if(csvFile.open(QIODevice::ReadOnly))
     {
@@ -108,7 +114,6 @@ void AddStudentWindw::toInqureWindowSlot()
 void AddStudentWindw::Import(QString path_in)
 {
     ImportFormCSV(path_in);
-    qDebug()<<path_in;
 }
 
 //打开文件选择界面

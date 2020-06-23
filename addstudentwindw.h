@@ -49,7 +49,7 @@ private slots:
 
 private:
     Ui::AddStudentWindw *ui;
-    inqureWindow w1;//自定的数据查询窗口
+    inqureWindow w1;//数据查询窗口
     UerInformWindow w2;//个人信息显示窗口
     FileBrowser w3;//文件浏览窗口
     studentQT Opera_studens1;//学生成员变量0

@@ -69,19 +69,18 @@ bool studentQT::InserAsID_SQlite(student stude)
         qDebug()<<"SQlite not open in fun InserAsID_SQlite";
         return(false);
     }
-
 }
 
 bool studentQT::ImportFromCSV_SQlite(QString importLine)
 {
     QStringList list = importLine.split(",");
     student impo_stu;
-    list[1]=list[1]+list[2];
-    list[1]=list[1]+list[3];
-    list[1]=list[1]+list[4];
-    list[1]=list[1]+list[5];
+    for(int i=2;i<=5;i++)
+    {
+        list[1]=list[1]+list[i];  //获取完整的location
+    }
 
     impo_stu.SetAll(list[0].toStdString(),list[6].toStdString(),list[1].toStdString());
-    InserAsID_SQlite(impo_stu);
+    InserAsID_SQlite(impo_stu);//导入到数据库
 }
 

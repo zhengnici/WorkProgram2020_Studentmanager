@@ -1,6 +1,30 @@
 #include "inqurewindow.h"
 #include "ui_inqurewindow.h"
 
+//批量导出槽函数，导出为CSV格式
+void inqureWindow::OutOut()
+{
+    QString  csvOutFile=QFileDialog::getSaveFileName(this, tr("Excel file"), QApplication::applicationDirPath(),tr("Files(*.csv)"));
+    QMessageBox::information(this, tr("导出数据成功"), tr("信息已保存在%1！").arg(csvOutFile), tr("确定"));
+
+    //打开.csv文件
+    QFile file(csvOutFile);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        std::cerr << "Cannot open file for writing: "<< qPrintable(file.errorString()) << std::endl;
+        return;
+    }
+    QTextStream out(&file);
+    for(int i=0;i<=sqlmodel->rowCount();i++)
+    {
+        for(int j=0;j<=5;j++)
+        {
+            out<<sqlmodel->record(i).value(j).toString()<<",";
+        }
+        out<<"\n";
+    }
+    file.close();
+}
 
 inqureWindow::inqureWindow(QWidget *parent) :
     QDialog(parent),
@@ -8,7 +32,6 @@ inqureWindow::inqureWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     InitiaTableView();
-
 }
 
 inqureWindow::~inqureWindow()
@@ -50,18 +73,18 @@ void inqureWindow::InitiaTableView()
     {
        qDebug()<<"SQlite not open in fun InitiaTableView()";
     }
-
-
-
 }
 
 //修改某一列
 void inqureWindow::on_pushButton_5_clicked()
 {
     sqlmodel->database().transaction(); //开始事务操作
-    if (sqlmodel->submitAll()) {
+    if (sqlmodel->submitAll())
+    {
         sqlmodel->database().commit(); //提交
-    } else {
+    }
+    else
+    {
         sqlmodel->database().rollback(); //回滚
         QMessageBox::warning(this, tr("tableModel"),
                              tr("数据库错误: %1")
@@ -121,7 +144,7 @@ void inqureWindow::on_pushButton_6_clicked()
         if(ui->lineEdit->text().isEmpty())
         {
             sqlmodel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-             sqlmodel->setFilter(QObject::tr("province='%1'").arg("四川省"));
+            sqlmodel->setFilter(QObject::tr("province='%1'").arg("四川省"));
             sqlmodel->select();//相当于刷新只含四川的
         }
         else
@@ -158,12 +181,10 @@ void inqureWindow::on_pushButton_6_clicked()
             }
         } break;
     }
-}
+    }
 }
 
 void inqureWindow::on_pushButton_8_clicked()
 {
-
+    OutOut();
 }
-
-

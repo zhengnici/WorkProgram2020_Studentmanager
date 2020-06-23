@@ -3,15 +3,15 @@
 
 void FileBrowser::init()
 {
-        model = new QFileSystemModel();
+    model = new QFileSystemModel();
 
-        model->setRootPath("d:/");
-        QStringList nameFilter;
-        nameFilter << "*.csv" ;//可添加<< "*.h"实现多文件格式
-        model->setNameFilterDisables(false);
-        model->setNameFilters(nameFilter);
-        ui->treeView->setModel(model);
-        ui->treeView->setRootIndex(model->index("D:/program"));
+    model->setRootPath("d:/");
+    QStringList nameFilter;
+    nameFilter << "*.csv" ;//可添加<< "*.h"实现多文件格式
+    model->setNameFilterDisables(false);
+    model->setNameFilters(nameFilter);
+    ui->treeView->setModel(model);
+    ui->treeView->setRootIndex(model->index("D:/program"));
 }
 
 FileBrowser::FileBrowser(QWidget *parent) :
@@ -27,18 +27,11 @@ FileBrowser::~FileBrowser()
     delete ui;
 }
 
-//传递CSV文件的地址
+//传递选择的文件的地址
 void FileBrowser::on_pushButton_2_clicked()
 {
-    if(filepath.indexOf(".csv")>=0)
-    {
-        emit ObjPath(filepath);
-        this->hide();
-    }
-    else
-    {
-        QMessageBox::information(NULL, "错误", "未选择正确文件只支持CSV格式文件");
-    }
+    emit ObjPath(filepath);
+    this->hide();
 }
 
 //获取路径
